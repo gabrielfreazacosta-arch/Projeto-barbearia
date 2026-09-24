@@ -196,64 +196,44 @@ a { color: inherit; }
    CÓDIGO NOVO: DROPDOWN DE FUNCIONAMENTO E LOCAL
    ========================================================================== */
 
-/* Mantém o botão alinhado com os outros links do menu */
-.menu-dropdown-container {
-  position: relative;
-  display: inline-block;
-}
-
-/* Estiliza o botão para parecer um link comum do seu menu */
-.menu-drop-btn {
-  background: none;
-  border: none;
-  color: #fff; /* Altere para a cor dos seus links se não for branco */
-  font-family: inherit;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  transition: color 0.3s ease;
-}
-
-.menu-drop-btn:hover {
-  color: #d4af37; /* Cor de destaque ao passar o mouse */
-}
-
-/* Caixa oculta que vai descer */
+/* Caixa que vai fazer o efeito de sanfona (slide down) */
 .aba-conteudo {
-  display: none; 
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #121212; /* Fundo escuro combinando com a barbearia */
-  border: 1px solid #2c2c2c;
+  background-color: #121212; /* Fundo escuro */
+  border: 1px solid transparent; /* Começa sem borda para não marcar quando fechada */
   border-radius: 8px;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.7);
-  padding: 20px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0);
+  padding: 0 20px; /* Começa sem preenchimento vertical */
   width: 420px;
   z-index: 9999;
+  
+  /* Código que faz a mágica do efeito de sanfona */
+  max-height: 0;
+  overflow: hidden;
+  display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease, padding 0.4s ease, border-color 0.4s ease;
 }
 
-/* Classe ativada pelo JavaScript para abrir a aba */
+/* Classe aplicada pelo JS que faz a aba deslizar e abrir */
 .aba-conteudo.mostrar {
-  display: grid;
+  max-height: 300px; /* Altura máxima para o conteúdo expandido */
   opacity: 1;
-  pointer-events: auto;
+  border-color: #2c2c2c;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.7);
+  padding: 20px; /* Aplica o preenchimento quando abre */
   transform: translateX(-50%) translateY(10px);
 }
 
-/* Conteúdo interno da aba */
+/* Títulos e textos internos da aba */
 .aba-coluna h4 {
-  color: #d4af37; /* Tom dourado para os títulos */
+  color: #d4af37;
+  margin-top: 0;
   margin-bottom: 10px;
   font-size: 15px;
   text-transform: uppercase;
@@ -302,3 +282,4 @@ a { color: inherit; }
     transform: translateY(10px);
   }
 }
+
