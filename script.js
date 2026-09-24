@@ -74,3 +74,13 @@ if (form) {
 form.addEventListener("input", (e) => {
   if (e.target.classList.contains("invalid")) showError(e.target, "");
 });
+
+// Forçar o botão do WhatsApp a funcionar de forma isolada
+document.addEventListener("DOMContentLoaded", () => {
+    const btnWp = document.getElementById("btn-whatsapp");
+    if (btnWp) {
+        btnWp.addEventListener("click", (e) => {
+            e.stopPropagation(); // Impede que outros scripts interfiram no clique
+        });
+    }
+});
