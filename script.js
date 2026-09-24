@@ -1,7 +1,7 @@
 "use strict";
 
 // Troque pelo WhatsApp da barbearia: código do país + DDD + número, só dígitos.
-const WHATSAPP = "5500000000000";
+const WHATSAPP = "+557199370238";
 
 const header = document.getElementById("header");
 const menuBtn = document.getElementById("menuBtn");
