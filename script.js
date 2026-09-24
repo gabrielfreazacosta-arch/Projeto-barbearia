@@ -84,3 +84,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+// Lógica para abrir e fechar a aba de Funcionamento e Local
+document.addEventListener("DOMContentLoaded", function () {
+  const botaoDropdown = document.getElementById("btn-funcionamento");
+  const abaDropdown = document.getElementById("aba-informacoes");
+
+  if (botaoDropdown && abaDropdown) {
+    // Abre / Fecha ao clicar no botão
+    botaoDropdown.addEventListener("click", function (e) {
+      e.stopPropagation();
+      abaDropdown.classList.toggle("mostrar");
+    });
+
+    // Fecha a aba se clicar em qualquer outro lugar da tela
+    document.addEventListener("click", function (e) {
+      if (!abaDropdown.contains(e.target) && e.target !== botaoDropdown) {
+        abaDropdown.classList.remove("mostrar");
+      }
+    });
+  }
+});

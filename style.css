@@ -191,3 +191,114 @@ a { color: inherit; }
   .pole { display: none; }
   .about, .row { grid-template-columns: 1fr; }
 }
+
+/* ==========================================================================
+   CÓDIGO NOVO: DROPDOWN DE FUNCIONAMENTO E LOCAL
+   ========================================================================== */
+
+/* Mantém o botão alinhado com os outros links do menu */
+.menu-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Estiliza o botão para parecer um link comum do seu menu */
+.menu-drop-btn {
+  background: none;
+  border: none;
+  color: #fff; /* Altere para a cor dos seus links se não for branco */
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.menu-drop-btn:hover {
+  color: #d4af37; /* Cor de destaque ao passar o mouse */
+}
+
+/* Caixa oculta que vai descer */
+.aba-conteudo {
+  display: none; 
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #121212; /* Fundo escuro combinando com a barbearia */
+  border: 1px solid #2c2c2c;
+  border-radius: 8px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  width: 420px;
+  z-index: 9999;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+/* Classe ativada pelo JavaScript para abrir a aba */
+.aba-conteudo.mostrar {
+  display: grid;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(10px);
+}
+
+/* Conteúdo interno da aba */
+.aba-coluna h4 {
+  color: #d4af37; /* Tom dourado para os títulos */
+  margin-bottom: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.aba-coluna p {
+  color: #ccc;
+  font-size: 13.5px;
+  margin: 4px 0;
+  line-height: 1.4;
+}
+
+/* Botão do Google Maps */
+.btn-como-chegar {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 14px;
+  background-color: #d4af37;
+  color: #000;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  transition: background 0.2s;
+}
+
+.btn-como-chegar:hover {
+  background-color: #fff;
+}
+
+/* Ajuste obrigatório para celulares */
+@media (max-width: 768px) {
+  .aba-conteudo {
+    position: fixed;
+    top: 80px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    transform: none;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .aba-conteudo.mostrar {
+    transform: translateY(10px);
+  }
+}
