@@ -26,33 +26,35 @@
         <nav class="nav" id="nav" aria-label="Principal">
             <a href="#servicos">Serviços</a>
             <a href="#sobre">Sobre</a>
-           <!-- Cole este bloco no lugar do link antigo do menu -->
-<div class="menu-dropdown-container">
-  <!-- Botão que ativa a abinha -->
-  <button id="btn-funcionamento" class="menu-drop-btn" type="button">
-    Funcionamento e Local ▾
-  </button>
-  
-  <!-- Aba expandível com as informações reais -->
-  <div id="aba-informacoes" class="aba-conteudo">
-    <div class="aba-coluna">
-      <h4>🕒 Horários</h4>
-      <p>Segunda a Sábado: 07h às 19h</p>
-      <p>Sábados: 08h às 18h</p>
-    </div>
-    
-    <div class="aba-coluna">
-      <h4>📍 Localização</h4>
-      <p>Rua Heide Carneiro, 7</p>
-      <p>Bairro: Trobogy</p>
-      <p>Salvador - BA</p>
-      <!-- Link real gerado para o Google Maps -->
-      <a href="https://google.com" target="_blank" class="btn-como-chegar">Como Chegar</a>
-    </div>
-  </div>
-</div>
+            <!-- Cole este bloco no lugar do link antigo do menu -->
+            <div class="menu-dropdown-container">
+                <!-- Botão que ativa a abinha -->
+                <button id="btn-funcionamento" class="menu-drop-btn" type="button"
+                    onclick="document.getElementById('aba-informacoes').classList.toggle('mostrar')">
+                    Funcionamento e Local ▾
+                </button>
 
-          <a class="btn btn-small" id="btn-whatsapp" href="https://wa.me/5571993702038?text=Olá, gostaria de agendar um horário!" target="_blank">Agendar</a>
+                <!-- Aba expandível com as informações reais -->
+                <div id="aba-informacoes" class="aba-conteudo">
+                    <div class="aba-coluna">
+                        <h4>🕒 Horários</h4>
+                        <p>Segunda a Sábado: 07h às 19h</p>
+                        <p>Sábados: 08h às 18h</p>
+                    </div>
+
+                    <div class="aba-coluna">
+                        <h4>📍 Localização</h4>
+                        <p>Rua Heide Carneiro, 7</p>
+                        <p>Bairro: Trobogy</p>
+                        <p>Salvador - BA</p>
+                        <!-- Link real gerado para o Google Maps -->
+                       <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=-12.9283457,-38.407269" target="_blank" rel="noopener">Como chegar</a>
+                    </div>
+                </div>
+            </div>
+
+            <a class="btn btn-small" id="btn-whatsapp"
+                href="https://wa.me/5571993702038?text=Olá, gostaria de agendar um horário!" target="_blank">Agendar</a>
 
 
         </nav>
@@ -66,7 +68,9 @@
                 <p class="hero-lead">Corte na régua, barba bem desenhada e o cuidado de quem entende de cabelo. Chegue,
                     sente e saia do seu jeito.</p>
                 <div class="hero-actions">
-                  <a class="btn btn-small" id="btn-whatsapp" href="https://wa.me/5571993702038?text=Olá, gostaria de agendar um horário!" target="_blank">Agendar</a>  
+                    <a class="btn btn-small" id="btn-whatsapp"
+                        href="https://wa.me/5571993702038?text=Olá, gostaria de agendar um horário!"
+                        target="_blank">Agendar</a>
                     <a class="link" href="#servicos">Ver serviços e preços</a>
                 </div>
             </div>
