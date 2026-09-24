@@ -24,13 +24,43 @@
             <span></span><span></span>
         </button>
         <nav class="nav" id="nav" aria-label="Principal">
+            <div class="nav-info">
+                <details>
+                    <summary>Funcionamento e horário</summary>
+
+                    <div class="info-body">
+                        <h3>Horários</h3>
+                        <dl class="info-hours">
+                            <div>
+                                <dt>Segunda a sexta</dt>
+                                <dd>09h às 20h</dd>
+                            </div>
+                            <div>
+                                <dt>Sábado</dt>
+                                <dd>08h às 18h</dd>
+                            </div>
+                            <div>
+                                <dt>Domingo</dt>
+                                <dd>Fechado</dd>
+                            </div>
+                        </dl>
+
+                        <h3>Endereço</h3>
+                        <address>R. Heide Carneiro, 7 - Trobogy<br>Salvador - BA, 41745-135</address>
+
+                        <a class="btn btn-block"
+                            href="https://www.google.com/maps/dir/?api=1&amp;destination=-12.9283457,-38.407269"
+                            target="_blank" rel="noopener">Como chegar</a>
+                    </div>
+                </details>
+            </div>
             <a href="#servicos">Serviços</a>
             <a href="#sobre">Sobre</a>
             <!-- Cole este bloco no lugar do link antigo do menu -->
             <div class="menu-dropdown-container">
                 <!-- Botão que ativa a abinha -->
-                <button id="btn-funcionamento" class="menu-drop-btn" type="button"
-                    onclick="document.getElementById('aba-informacoes').classList.toggle('mostrar')">
+                <button id="btn-funcionamento" class="menu-drop-btn" type="button" aria-expanded="false"
+                    aria-controls="aba-informacoes">
                     Funcionamento e Local ▾
                 </button>
 
@@ -38,8 +68,8 @@
                 <div id="aba-informacoes" class="aba-conteudo">
                     <div class="aba-coluna">
                         <h4>🕒 Horários</h4>
-                        <p>Segunda a Sábado: 07h às 19h</p>
-                        <p>Sábados: 08h às 18h</p>
+                        <p>Segunda a sexta: 09h às 20h</p>
+                        <p>Sábado: 08h às 18h. Domingo: fechado.</p>
                     </div>
 
                     <div class="aba-coluna">
@@ -48,13 +78,15 @@
                         <p>Bairro: Trobogy</p>
                         <p>Salvador - BA</p>
                         <!-- Link real gerado para o Google Maps -->
-                       <a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=-12.9283457,-38.407269" target="_blank" rel="noopener">Como chegar</a>
+                        <a class="btn-como-chegar"
+                            href="https://www.google.com/maps/dir/?api=1&amp;destination=-12.9283457,-38.407269"
+                            target="_blank" rel="noopener">Como chegar</a>
                     </div>
                 </div>
             </div>
 
-            <a class="btn btn-small" id="btn-whatsapp"
-                href="https://wa.me/5571993702038?text=Olá, gostaria de agendar um horário!" target="_blank">Agendar</a>
+            <a class="btn btn-small" href="https://wa.me/5571993702038?text=Olá, gostaria de agendar um horário!"
+                target="_blank">Agendar</a>
 
 
         </nav>
@@ -68,7 +100,7 @@
                 <p class="hero-lead">Corte na régua, barba bem desenhada e o cuidado de quem entende de cabelo. Chegue,
                     sente e saia do seu jeito.</p>
                 <div class="hero-actions">
-                    <a class="btn btn-small" id="btn-whatsapp"
+                    <a class="btn btn-small"
                         href="https://wa.me/5571993702038?text=Olá, gostaria de agendar um horário!"
                         target="_blank">Agendar</a>
                     <a class="link" href="#servicos">Ver serviços e preços</a>
@@ -127,3 +159,17 @@
                     <p>O Studio B'Sant nasceu da vontade de unir a tradição da barbearia com o olhar atual do hair
                         style. Cada atendimento é feito com hora marcada, para você ser atendido sem fila e sem
                         correria.</p>
+                    <p>Ferramentas higienizadas, produtos de qualidade e conversa boa fazem parte do serviço.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; <span id="year"></span> Studio B'Sant Barbershop e Hair Style</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
