@@ -62,21 +62,14 @@ function validate() {
   return valid;
 }
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (!validate()) return;
+// Remove o comportamento antigo do formulário para não quebrar o link do HTML
+const form = document.getElementById("bookingForm");
+if (form) {
+    form.addEventListener("submit", (e) => {
+        e.preventDefault(); 
+    });
+}
 
-  const { nome, servico, data, hora } = form.elements;
-  const [ano, mes, dia] = data.value.split("-");
-  const text =
-    `Olá! Gostaria de agendar no Studio B'Sant.\n` +
-    `Nome: ${nome.value.trim()}\n` +
-    `Serviço: ${servico.value}\n` +
-    `Data: ${dia}/${mes}/${ano}\n` +
-    `Horário: ${hora.value}`;
-
-  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
-});
 
 form.addEventListener("input", (e) => {
   if (e.target.classList.contains("invalid")) showError(e.target, "");
